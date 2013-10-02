@@ -1,7 +1,7 @@
 "use strict";
 
 var Login = function() {
-    this.alert = $('.alert');
+    this.alert = $('.wrong-login');
     this.alert.hide();
     $('.container').show();
     this.submit = $('button[type=submit]');
