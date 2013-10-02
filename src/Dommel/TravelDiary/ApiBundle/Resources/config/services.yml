@@ -1,0 +1,7 @@
+parameters:
+#    dommel_travel_diary_api.example.class: Dommel\TravelDiary\ApiBundle\Example
+
+services:
+#    dommel_travel_diary_api.example:
+#        class: %dommel_travel_diary_api.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

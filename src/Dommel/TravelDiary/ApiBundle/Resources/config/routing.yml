@@ -1,0 +1,4 @@
+dommel_travel_diary_api_user_login:
+    path:     /user/login
+    defaults: { _controller: DommelTravelDiaryApiBundle:User:login }
+    methods:  [ POST ]

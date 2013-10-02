@@ -1,0 +1,7 @@
+parameters:
+#    dommel_travel_diary_web.example.class: Dommel\TravelDiary\WebBundle\Example
+
+services:
+#    dommel_travel_diary_web.example:
+#        class: %dommel_travel_diary_web.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

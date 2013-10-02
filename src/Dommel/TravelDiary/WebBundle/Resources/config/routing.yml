@@ -1,0 +1,6 @@
+dommel_travel_diary_login:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'DommelTravelDiaryWebBundle:Public:login.html.twig'
+        private: false

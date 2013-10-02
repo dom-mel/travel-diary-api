@@ -1,0 +1,8 @@
+dommel_travel_diary_web:
+    resource: "@DommelTravelDiaryWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dommel_travel_diary_api:
+    resource: "@DommelTravelDiaryApiBundle/Resources/config/routing.yml"
+    prefix:   /api/1.0
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Photos{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block css %}
+        {% stylesheets '@DommelTravelDiaryWebBundle/Resources/public/css/main.css' %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen">
+        {% endstylesheets %}
+    {% endblock %}
+
+</head>
+<body>
+
+{% if app.debug %}
+    <div class="alert-warning">
+        <p class="visible-lg">Large</p>
+        <p class="visible-md">Medium</p>
+        <p class="visible-sm">Small</p>
+        <p class="visible-xs">eXtra Small</p>
+    </div>
+{% endif %}
+
+<noscript>
+    <div class="alert alert-danger">
+        You need JavaScript enabled to use TravelDiary.
+    </div>
+</noscript>
+
+<div class="compatibility-warning alert alert-warning">
+    Your browser is to old or not supported by TravelBook. Please upgrade!
+</div>
+
+{% block content %}{% endblock content %}
+
+{% block javascript %}
+    {% javascripts
+    '@DommelTravelDiaryWebBundle/Resources/public/js/jquery.js'
+    '@DommelTravelDiaryWebBundle/Resources/public/js/bootstrap/alert.js'
+    '@DommelTravelDiaryWebBundle/Resources/public/js/compability.js'
+    '@DommelTravelDiaryWebBundle/Resources/public/js/config.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+</body>
+</html>
