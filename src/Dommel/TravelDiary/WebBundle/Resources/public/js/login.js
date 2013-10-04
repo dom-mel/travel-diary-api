@@ -29,6 +29,8 @@ Login.prototype.doLogin = function(event) {
 
 Login.prototype.loginSuccess = function(data) {
     if (!data.success) this.alert.show();
+    sessionStorage.sessionId = data.session.session_id;
+    window.location.replace('start');
     this.unlockForm();
 };
 

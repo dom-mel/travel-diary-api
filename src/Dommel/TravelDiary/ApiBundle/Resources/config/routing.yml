@@ -2,3 +2,11 @@ dommel_travel_diary_api_user_login:
     path:     /user/login
     defaults: { _controller: DommelTravelDiaryApiBundle:User:login }
     methods:  [ POST ]
+
+dommel_travel_diary_api_user_current:
+    path:     /user/current
+    defaults:
+        _controller: DommelTravelDiaryApiBundle:User:current
+    requirements:
+        session: \d+
+    methods:  [ GET ]
