@@ -5,7 +5,7 @@ namespace Dommel\TravelDiary\ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Dommel\TravelDiary\ApiBundle\Entity\SessionRepository")
  */
 class SessionEntity {
 

@@ -40,5 +40,9 @@ class SessionService
         return $session;
     }
 
+    function deleteOldSessions() {
+        $this->entityManager->getRepository('DommelTravelDiaryApiBundle:SessionEntity')
+            ->deleteSessions(new \DateInterval('PT6H'));
+    }
 
 }
