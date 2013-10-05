@@ -2,6 +2,7 @@
 
 namespace Dommel\TravelDiary\ApiBundle\Controller;
 use Dommel\TravelDiary\ApiBundle\Entity\UserEntity;
+use Dommel\TravelDiary\ApiBundle\Services\Session\SessionService;
 use Dommel\TravelDiary\ApiBundle\Services\User\LoginException;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,13 +17,13 @@ class UserController extends FOSRestController {
         $password = $request->request->get('password');
 
         try {
-            $user = $this->login($userName, $password);
+            $user = $this->get('login_service')->login($userName, $password);
         } catch (LoginException $e) {
             $this->data['success'] = false;
             return $this->handleView($this->view($this->data));
         }
 
-        $session = $this->createSession($user);
+        $session = $this->get('session_service')->createSession($user);
 
         $this->data['user'] = $user;
         $this->data['session'] = $session;
@@ -31,21 +32,8 @@ class UserController extends FOSRestController {
         return $this->handleView($view);
     }
 
-    private function login($user, $password) {
-        $loginService = $this->get('login_service');
-        return $loginService->login($user, $password);
-    }
-
-    private function createSession(UserEntity $user) {
-        $sessionService = $this->get('session_service');
-        return $sessionService->createSession($user);
-    }
-
     public function currentAction(Request $request) {
-        $sessionId = $request->query->get('e
-
-
-        ');
+        $sessionId = $request->query->get('session');
         $sessionService = $this->get('session_service');
         $session = $sessionService->useSession($sessionId);
 

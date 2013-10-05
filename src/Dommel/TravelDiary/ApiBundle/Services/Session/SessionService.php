@@ -29,6 +29,10 @@ class SessionService
         return $session;
     }
 
+    /**
+     * @param $sessionId
+     * @return SessionEntity
+     */
     function useSession($sessionId)
     {
         $session = $this->entityManager->getRepository('DommelTravelDiaryApiBundle:SessionEntity')
