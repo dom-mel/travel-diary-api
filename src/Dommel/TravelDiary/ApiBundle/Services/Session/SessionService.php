@@ -36,13 +36,18 @@ class SessionService
     function useSession($sessionId)
     {
         $session = $this->entityManager->getRepository('DommelTravelDiaryApiBundle:SessionEntity')
-                ->findOneBy(array('sessionId' => $sessionId));
+                ->findActive($sessionId, new \DateInterval('PT6H'));
         return $session;
     }
 
     function deleteOldSessions() {
         $this->entityManager->getRepository('DommelTravelDiaryApiBundle:SessionEntity')
             ->deleteSessions(new \DateInterval('PT6H'));
+    }
+
+    function logout($sessionId) {
+        $this->entityManager->getRepository('DommelTravelDiaryApiBundle:SessionEntity')
+            ->deleteSession($sessionId);
     }
 
 }

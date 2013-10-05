@@ -40,7 +40,6 @@ class UserController extends FOSRestController {
         if ($session === null) {
             $this->data['success'] = false;
             $view = $this->view($this->data);
-            $view->setFormat('json');
             return $this->handleView($view);
         }
 
@@ -48,8 +47,15 @@ class UserController extends FOSRestController {
         $this->data['user'] = $session->getUser();
 
         $view = $this->view($this->data);
-        $view->setFormat('json');
         return $this->handleView($view);
+    }
+
+    public function logoutAction(Request $request) {
+        $sessionId = $request->query->get('session');
+        $sessionService = $this->get('session_service');
+        $sessionService->logout($sessionId);
+
+        return $this->handleView($this->view($this->data));
     }
 
 }
