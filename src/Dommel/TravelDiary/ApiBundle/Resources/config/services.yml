@@ -2,12 +2,17 @@ parameters:
 #    dommel_travel_diary_api.example.class: Dommel\TravelDiary\ApiBundle\Example
 
 services:
-#    dommel_travel_diary_api.example:
-#        class: %dommel_travel_diary_api.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
     login_service:
         class: Dommel\TravelDiary\ApiBundle\Services\User\LoginService
-        arguments: [ @doctrine.orm.entity_manager ]
+        arguments: [ @doctrine.orm.entity_manager, @security_service]
+
+    register_service:
+        class: Dommel\TravelDiary\ApiBundle\Services\User\RegisterService
+        arguments: [ @doctrine.orm.entity_manager, @security_service ]
+
+    security_service:
+        class: Dommel\TravelDiary\ApiBundle\Services\Security\SecurityService
+        arguments: [  ]
 
     session_service:
         class: Dommel\TravelDiary\ApiBundle\Services\Session\SessionService

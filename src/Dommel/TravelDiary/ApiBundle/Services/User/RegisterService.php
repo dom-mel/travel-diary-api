@@ -1,11 +1,13 @@
 <?php
 namespace Dommel\TravelDiary\ApiBundle\Services\User;
-
 use Doctrine\ORM\EntityManager;
 use Dommel\TravelDiary\ApiBundle\Entity\UserEntity;
 use Dommel\TravelDiary\ApiBundle\Services\Security\SecurityService;
 
-class LoginService
+/**
+ * @author Dominik Eckelmann
+ */
+class RegisterService
 {
 
     private $entityManager;
@@ -17,22 +19,12 @@ class LoginService
         $this->securityService = $securityService;
     }
 
-    public function login($email, $password)
+    public function register($email, $password)
     {
-
-        $password = $this->securityService->hash($password);
-
-        $user = $this->entityManager->getRepository('DommelTravelDiaryApiBundle:UserEntity')
-                ->findOneBy(array('email' => $email, 'password' => $password));
-
-        if ($user === null)
-        {
-            throw new LoginException();
-        }
-
-        return $user;
+        $user = new UserEntity();
+        $user->setEmail($email);
+        $user->setPassword($this->securityService->hash($password));
+        $this->entityManager->persist($user);
+        $this->entityManager->flush($user);
     }
-
-
-
 }

@@ -5,7 +5,8 @@ use Doctrine\ORM\EntityManager;
 use Dommel\TravelDiary\ApiBundle\Entity\SessionEntity;
 use Dommel\TravelDiary\ApiBundle\Entity\UserEntity;
 
-class SessionService {
+class SessionService
+{
 
     /**
      * @var \Doctrine\ORM\EntityManager
