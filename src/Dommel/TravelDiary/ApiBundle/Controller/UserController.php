@@ -54,8 +54,6 @@ class UserController extends FOSRestController {
         $sessionId = $request->request->get('session');
         $sessionService = $this->get('session_service');
         $sessionService->logout($sessionId);
-        $this->data['sess'] = $sessionId;
-        $this->data['sessasdf'] = 'asdf';
         return $this->handleView($this->view($this->data));
     }
 
