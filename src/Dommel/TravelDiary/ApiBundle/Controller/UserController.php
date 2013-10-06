@@ -51,10 +51,11 @@ class UserController extends FOSRestController {
     }
 
     public function logoutAction(Request $request) {
-        $sessionId = $request->query->get('session');
+        $sessionId = $request->request->get('session');
         $sessionService = $this->get('session_service');
         $sessionService->logout($sessionId);
-
+        $this->data['sess'] = $sessionId;
+        $this->data['sessasdf'] = 'asdf';
         return $this->handleView($this->view($this->data));
     }
 

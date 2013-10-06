@@ -7,14 +7,10 @@ dommel_travel_diary_api_user_current:
     path:     /user/current
     defaults:
         _controller: DommelTravelDiaryApiBundle:User:current
-    requirements:
-        session: \d+
     methods:  [ GET ]
 
 dommel_travel_diary_api_user_logout:
     path:      /user/logout
     defaults:
         _controller: DommelTravelDiaryApiBundle:User:logout
-    requirements:
-        session: \d+
     methods: [ POST ]

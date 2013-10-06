@@ -20,15 +20,17 @@ class SessionRepository extends EntityRepository {
 
     public function findActive($sessionId, \DateInterval $maxAge) {
         $query = $this->getEntityManager()->createQuery('
-            SELECT DommelTravelDiaryApiBundle:SessionEntity se
+            SELECT se
+            FROM DommelTravelDiaryApiBundle:SessionEntity se
             WHERE se.sessionId = :sessionId
-            AND se.created < :age
+            AND se.created > :age
         ');
 
         $age = new DateTime();
         $age = $age->sub($maxAge);
         $query->setParameter('age', $age);
         $query->setParameter('sessionId', $sessionId);
+
         return $query->getOneOrNullResult();
     }
 
