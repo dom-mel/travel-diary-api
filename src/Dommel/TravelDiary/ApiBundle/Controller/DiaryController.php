@@ -15,6 +15,21 @@ class DiaryController extends FOSRestController {
      * POST /diary/create
      */
 
+    public function getDiaryAction($id) {
+        $request = $this->getRequest();
+        $session = $this->get('session_service')->useSession($request->query->get('session', ''));
+        $session->getUser(); // Hacky
+
+        $diary = $this->get('diary_service')->getDiary($id);
+
+        if ($diary === null) {
+            $this->data['success'] = false;
+        } else {
+            $this->data['diary'] = $diary;
+        }
+        return $this->handleView($this->view($this->data));
+    }
+
     public function createAction(Request $request) {
         $session = $this->get('session_service')->useSession($request->request->get('session', ''));
 

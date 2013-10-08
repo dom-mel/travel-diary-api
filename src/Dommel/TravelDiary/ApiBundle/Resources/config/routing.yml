@@ -15,6 +15,12 @@ dommel_travel_diary_api_user_logout:
         _controller: DommelTravelDiaryApiBundle:User:logout
     methods: [ POST ]
 
+dommel_travel_diary_api_diary_get:
+    path:     /diary/{id}
+    defaults:
+        _controller: DommelTravelDiaryApiBundle:Diary:getDiary
+    methods: [ GET ]
+
 dommel_travel_diary_api_diary_create:
     path:     /diary/create
     defaults:

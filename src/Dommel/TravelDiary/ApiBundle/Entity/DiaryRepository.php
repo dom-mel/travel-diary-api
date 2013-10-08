@@ -14,8 +14,15 @@ class DiaryRepository extends EntityRepository {
             WHERE d.user = :user
         ')->setParameter('user', $user)
         ->getArrayResult();
+    }
 
-
+    public function getDiaryWithoutUser($id) {
+        return $this->getEntityManager()->createQuery('
+            SELECT d.id as id, d.title as title, d.text as text
+            FROM DommelTravelDiaryApiBundle:DiaryEntity d
+            WHERE d.id = :id
+        ')->setParameter('id', $id)
+            ->getOneOrNullResult();
     }
 
 }
