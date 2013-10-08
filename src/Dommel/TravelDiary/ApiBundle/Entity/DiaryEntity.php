@@ -31,6 +31,12 @@ class DiaryEntity
     protected $user;
 
     /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    protected $text;
+
+    /**
      * @param int $id
      */
     public function setId($id) {
@@ -70,5 +76,19 @@ class DiaryEntity
      */
     public function getUser() {
         return $this->user;
+    }
+
+    /**
+     * @param string $text
+     */
+    public function setText($text) {
+        $this->text = $text;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText() {
+        return $this->text;
     }
 }

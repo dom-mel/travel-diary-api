@@ -21,6 +21,7 @@ class DiaryController extends FOSRestController {
         $diary = new DiaryEntity();
         $diary->setUser($session->getUser());
         $diary->setTitle($request->request->get('title', ''));
+        $diary->setText($request->request->get('text', ''));
 
         if ($this->get('diary_service')->create($diary)) {
             $this->data['diaryId'] = $diary->getId();
