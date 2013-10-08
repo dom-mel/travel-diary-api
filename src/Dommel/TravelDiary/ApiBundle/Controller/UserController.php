@@ -1,8 +1,6 @@
 <?php
 
 namespace Dommel\TravelDiary\ApiBundle\Controller;
-use Dommel\TravelDiary\ApiBundle\Entity\UserEntity;
-use Dommel\TravelDiary\ApiBundle\Services\Session\SessionService;
 use Dommel\TravelDiary\ApiBundle\Services\User\LoginException;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
