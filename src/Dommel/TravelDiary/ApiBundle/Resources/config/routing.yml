@@ -32,3 +32,9 @@ dommel_travel_diary_api_diary_all:
     defaults:
         _controller: DommelTravelDiaryApiBundle:Diary:getDiaries
     methods: [ GET ]
+
+dommel_travel_diary_api_diary_photo_add:
+    path: /diary/{diaryId}/photo
+    defaults:
+        _controller: DommelTravelDiaryApiBundle:Diary:addPhoto
+    methods: [ POST ]
