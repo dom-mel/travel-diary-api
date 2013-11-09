@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "66ba7beac020659edbfba9d2a9a00085",
+    "hash": "900cfc278bbabc8ac9a007d1645f103a",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -137,16 +137,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "d0e4447707a064a5814b18cb0dcc2f24185f6179"
+                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/d0e4447707a064a5814b18cb0dcc2f24185f6179",
-                "reference": "d0e4447707a064a5814b18cb0dcc2f24185f6179",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/e16d7adf45664a50fa86f515b6d5e7f670130449",
+                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449",
                 "shasum": ""
             },
             "require": {
@@ -154,6 +154,10 @@
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.7",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "extra": {
@@ -174,7 +178,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -202,7 +207,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-09-26 19:23:25"
+            "time": "2013-10-25 19:04:14"
         },
         {
             "name": "doctrine/collections",
@@ -527,7 +532,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1297,6 +1302,107 @@
             "time": "2013-01-23 15:16:14"
         },
         {
+            "name": "phpexiftool/exiftool",
+            "version": "9.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alchemy-fr/exiftool.git",
+                "reference": "0b05edb639d032181f3fae7df8dc1194e9210dc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alchemy-fr/exiftool/zipball/0b05edb639d032181f3fae7df8dc1194e9210dc4",
+                "reference": "0b05edb639d032181f3fae7df8dc1194e9210dc4",
+                "shasum": ""
+            },
+            "require": {
+                "phpexiftool/phpexiftool": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Perl Licensing"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Harvey",
+                    "email": "phil@owl.phy.queensu.ca",
+                    "homepage": "http://www.sno.phy.queensu.ca/~phil/exiftool/"
+                }
+            ],
+            "description": "Exiftool is a library for reading, writing and editing meta information. This package is not PHP, but required for the main PHP driver : PHP Exiftool",
+            "keywords": [
+                "exiftool",
+                "metadatas"
+            ],
+            "time": "2013-01-30 18:48:32"
+        },
+        {
+            "name": "phpexiftool/phpexiftool",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/romainneutron/PHPExiftool.git",
+                "reference": "b07ad260ed33bf36e854c83656d71fbee49afa63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/romainneutron/PHPExiftool/zipball/b07ad260ed33bf36e854c83656d71fbee49afa63",
+                "reference": "b07ad260ed33bf36e854c83656d71fbee49afa63",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/cache": "~1.0",
+                "doctrine/collections": "~1.0",
+                "monolog/monolog": "~1.3",
+                "php": ">=5.3.3",
+                "phpexiftool/exiftool": "9.15",
+                "symfony/process": "~2.0"
+            },
+            "require-dev": {
+                "jms/serializer": "~0.10",
+                "sami/sami": "~1.0",
+                "silex/silex": "~1.0",
+                "symfony/console": "~2.0",
+                "symfony/css-selector": "~2.0",
+                "symfony/dom-crawler": "~2.0",
+                "symfony/finder": "~2.0",
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "jms/serializer": "To serialize tags",
+                "symfony/yaml": "To serialize tags in Yaml format"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PHPExiftool": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Romain Neutron",
+                    "email": "imprec@gmail.com",
+                    "homepage": "http://www.lickmychip.com/"
+                }
+            ],
+            "description": "Exiftool driver for PHP",
+            "keywords": [
+                "exiftool",
+                "metadata"
+            ],
+            "time": "2013-08-23 08:49:08"
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "1.3.0",
             "source": {
@@ -1798,16 +1904,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.3.5",
+            "version": "v2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "aa5626cd2a359567c948ebdeeca68d948640302f"
+                "reference": "d0597156c4c03ceca039f6b7770a47397ba295f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/aa5626cd2a359567c948ebdeeca68d948640302f",
-                "reference": "aa5626cd2a359567c948ebdeeca68d948640302f",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/d0597156c4c03ceca039f6b7770a47397ba295f0",
+                "reference": "d0597156c4c03ceca039f6b7770a47397ba295f0",
                 "shasum": ""
             },
             "require": {
@@ -1902,24 +2008,24 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-09-27 07:31:40"
+            "time": "2013-10-10 13:24:22"
         },
         {
             "name": "twig/extensions",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig-extensions.git",
-                "reference": "921799aaf05f88af749d72912d6b154dfeb9a03e"
+                "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/921799aaf05f88af749d72912d6b154dfeb9a03e",
-                "reference": "921799aaf05f88af749d72912d6b154dfeb9a03e",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
+                "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
                 "shasum": ""
             },
             "require": {
-                "twig/twig": "1.*"
+                "twig/twig": "~1.0"
             },
             "type": "library",
             "extra": {
@@ -1949,20 +2055,20 @@
                 "i18n",
                 "text"
             ],
-            "time": "2013-02-28 14:21:30"
+            "time": "2013-10-18 19:37:15"
         },
         {
             "name": "twig/twig",
-            "version": "v1.14.0",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59"
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/224fc55635d544a2ec8edb3592be18db5a093f59",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/ca445842fcea4f844d68203ffa2d00f5e3cdea64",
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64",
                 "shasum": ""
             },
             "require": {
@@ -1998,7 +2104,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-10-03 06:41:20"
+            "time": "2013-10-30 08:20:53"
         },
         {
             "name": "willdurand/negotiation",
@@ -2059,7 +2165,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dflydev/markdown": 20
+        "dflydev/markdown": 20,
+        "phpexiftool/phpexiftool": 20
     },
     "platform": {
         "php": ">=5.3.3"

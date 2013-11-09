@@ -8,6 +8,7 @@ use Dommel\TravelDiary\ApiBundle\Entity\PhotoEntity;
 use Dommel\TravelDiary\ApiBundle\Entity\UserEntity;
 use dflydev\markdown\MarkdownParser;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use PHPExiftool\Reader;
 
 class DiaryService
 {
@@ -76,10 +77,14 @@ class DiaryService
         }
         $photo->move($this->getPhotoPath(), $photoEntity->getId());
 
+
+
         return true;
     }
+
 
     private function getPhotoPath() {
         return __DIR__ . "/../../../../../../data/images";
     }
 }
+

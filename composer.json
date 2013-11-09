@@ -21,7 +21,8 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/rest-bundle": "0.13.*",
-        "dflydev/markdown": "1.0.*@dev"
+        "dflydev/markdown": "1.0.*@dev",
+        "phpexiftool/phpexiftool": "0.3.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
